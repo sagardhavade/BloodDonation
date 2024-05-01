@@ -1,0 +1,77 @@
+﻿@model blood.Models.Donor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Donor</h4>
+    <hr />
+    <dl class="dl-horizontal" >
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.BloodType)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.BloodType)
+        </dd>
+
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.LastDonationDate)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.LastDonationDate)
+        </dd>
+
+        <dt style="padding: 05px;">
+            @Html.DisplayNameFor(model => model.other)
+        </dt>
+
+        <dd style="padding: 05px;">
+            @Html.DisplayFor(model => model.other)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.id })*@
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }, new { @class = "btn btn-primary" })
+    |
+    @Html.ActionLink("Back to List", "Index")
+
+</p>

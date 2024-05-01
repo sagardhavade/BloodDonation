@@ -1,0 +1,87 @@
+﻿@model IEnumerable<blood.Models.Donor>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Donor</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <button type="button" class="btn btn-success" onclick="location.href='@Url.Action("Create")'">
+        <i class="fas fa-plus"></i> Create New
+    </button>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BloodType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastDonationDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.other)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.BloodType)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Gender)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LastDonationDate)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.other)
+    </td>
+    @*<td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>*@
+    <td>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Edit", new { id = item.id })'">
+            <i class="fas fa-edit"></i> Edit
+        </button>
+        |
+        <button type="button" class="btn btn-info" onclick="location.href='@Url.Action("Details", new { id = item.id })'">
+            <i class="fas fa-info-circle"></i> Details
+        </button>
+        |
+        <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action("Delete", new { id = item.id })'">
+            <i class="fas fa-trash-alt"></i> Delete
+        </button>
+    </td>
+
+</tr>
+}
+
+</table>
